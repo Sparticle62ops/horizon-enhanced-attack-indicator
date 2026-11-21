@@ -1,12 +1,13 @@
 [package]
 name = "horizon-mod-enhanced-attack-indicator"
-version = "0.1.0"
+version = "1.0.1"
 edition = "2024"
 license = "MIT"
 publish = false
-description = "Slice 1 of a Horizon port of Enhanced Attack Indicator: indicator variants, cooldown math and charge state."
+description = "The attack indicator shows more than melee attack cooldowns: an exact 1:1 Rust port of Enhanced Attack Indicator."
 
 [lib]
 path = "src/lib.rs"
 
-[workspace]
+[dependencies]
+horizon-mod-api = { path = ".horizon/sdk/api/crates/horizon-mod-api" }

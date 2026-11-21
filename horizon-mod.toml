@@ -1,0 +1,43 @@
+id = "enhanced_attack_indicator"
+name = "Enhanced Attack Indicator"
+version = "1.0.1"
+description = """Exact 1:1 Rust translation of [Enhanced Attack Indicator](https://github.com/Minenash/Enhanced-Attack-Indicator)
+(upstream Java, MIT (c) 2021 Minenash). Carries the upstream license and credit.
+
+Ported for the Horizon client by sparticle.
+
+The attack indicator shows more than melee attack cooldowns: the crosshair
+indicator renders the mod's progress chain instead — sleeping, block
+breaking, bow/crossbow/trident draw, food and potions, shulker/bundle
+fullness, item cooldowns, charged crossbow, with the vanilla weapon
+cooldown at the configured priority (First/Middle/Last). The vanilla
+crosshair layer is replaced by the engine's own crosshair sequence driven
+by the chain, in place of the upstream render-crosshair redirect.
+
+Live on the mod API: the nine config entries as settings (upstream lang
+labels, same defaults); the progress chain and the replacement draw 1:1;
+the crosshair layer replacement wired (register above, cancel, draw).
+Pending host wires (tracked): the chain's world inputs — the local attack
+strength scale, sleep timer, block breaking progress, item cooldown
+progress and held-stack components — so the weapon branch follows the
+snapshot until they land; the hotbar-mode sword indicator stays the
+engine's draw.
+
+Pinned to Horizon f00125f61f794aaa3d4e950d301f353b35b6ee3d and
+horizon-mixins e59da9094f0c2fdda6c627fe9eff22dec6a906f0, mod api 0.2; exact
+1:1 Rust port tested against those revisions (18 tests).
+
+Licence: MIT (LICENSE carries the upstream text). Source:
+https://github.com/Sparticle62ops/horizon-enhanced-attack-indicator
+"""
+authors = ["Minenash", "sparticle"]
+license = "MIT"
+homepage = "https://github.com/Sparticle62ops/horizon-enhanced-attack-indicator"
+api = "0.2"
+side = "client"
+capabilities = ["registries"]
+
+[native]
+game = "26.3"
+horizon = "f00125f61f794aaa3d4e950d301f353b35b6ee3d"
+mixins = "e59da9094f0c2fdda6c627fe9eff22dec6a906f0"
